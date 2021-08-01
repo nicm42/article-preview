@@ -14,33 +14,30 @@ import { terser } from 'rollup-plugin-terser';
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
 
+const plugins = () => [
+  postcss({
+    extensions: ['.scss'],
+  }),
+  babel({
+    exclude: 'node_modules/**',
+  }),
+  resolve(),
+  commonjs(),
+  scss({
+    processor: () => postcss([autoprefixer()]),
+    include: ['/**/*.css', '/**/*.scss', '/**/*.sass'],
+    output: 'dist/style.css',
+  }),
+  serve('dist'),
+  livereload(),
+  typescript(),
+];
+
 export default {
-  input: './src/main.ts',
-  output: [
-    { file: './dist/bundle.min.js', format: 'cjs' },
-    { file: 'lib.js', format: 'cjs' },
-    { file: 'lib.min.js', format: 'cjs', plugins: [terser()] },
-    { file: 'lib.esm.js', format: 'esm' },
-    { file: '.dist/output.js', format: 'esm' },
-  ],
-  plugins: [
-    postcss({
-      extensions: ['.css'],
-    }),
-    babel({
-      exclude: 'node_modules/**',
-    }),
-    resolve(),
-    commonjs(),
-    scss({
-      processor: () => postcss([autoprefixer()]),
-      includePaths: [
-        path.join(__dirname, '../../node_modules/'),
-        'node_modules/',
-      ],
-    }),
-    serve('dist'),
-    livereload(),
-    typescript(),
-  ],
+  input: './src/scripts/main.ts',
+  output: {
+    file: './dist/bundle.min.js',
+    format: 'iife',
+  },
+  plugins: plugins(),
 };

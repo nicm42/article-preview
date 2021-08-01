@@ -4,7 +4,8 @@
   "description": "![Design preview for the Article preview component coding challenge](./design/desktop-preview.jpg)",
   "main": "src/js/main.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "serve": "./node_modules/.bin/reload -b -d ./app -p 8000 | ./node_modules/.bin/rollup -c -w"
   },
   "repository": {
     "type": "git",
