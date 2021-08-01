@@ -1,5 +1,5 @@
 // CSS
-import scss from 'rollup-plugin-scss';
+//import scss from 'rollup-plugin-scss';
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 
@@ -16,21 +16,20 @@ import livereload from 'rollup-plugin-livereload';
 
 const plugins = () => [
   postcss({
-    extensions: ['.scss'],
+    plugins: [autoprefixer()],
+    extract: true,
+    sourceMap: process.env.NODE_ENV === 'production' ? false : 'inline',
+    minimize: process.env.NODE_ENV === 'production',
   }),
   babel({
     exclude: 'node_modules/**',
   }),
   resolve(),
   commonjs(),
-  scss({
-    processor: () => postcss([autoprefixer()]),
-    include: ['/**/*.css', '/**/*.scss', '/**/*.sass'],
-    output: 'dist/style.css',
-  }),
   serve('dist'),
   livereload(),
   typescript(),
+  process.env.NODE_ENV === 'production' && terser(),
 ];
 
 export default {
