@@ -9,7 +9,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../images/favicon-32x32.png"
+      href="./images/favicon-32x32.png"
     />
 
     <title>Frontend Mentor | Article preview component</title>
@@ -26,12 +26,39 @@
     </style>
   </head>
   <body>
-    Shift the overall look and feel by adding these wonderful touches to
-    furniture in your home Ever been in a room and felt like something was
-    missing? Perhaps it felt slightly bare and uninviting. I’ve got some simple
-    tips to help you make any room feel complete. Michelle Appleton 28 Jun 2020
-    Share
-
+    <main class="content">
+      <section class="content__image">
+        <img
+          src="./images/drawers.jpg"
+          alt="Green drawers with a yellow cushion beside them. On them is a plant and two photo frames"
+        />
+      </section>
+      <section class="content__text">
+        <h1 class="content__header">
+          Shift the overall look and feel by adding these wonderful touches to
+          furniture in your home
+        </h1>
+        <p class="content__paragraph">
+          Ever been in a room and felt like something was missing? Perhaps it
+          felt slightly bare and uninviting. I’ve got some simple tips to help
+          you make any room feel complete.
+        </p>
+        <div class="content__footer">
+          <img
+            class="content__avatar"
+            src="./images/avatar-michelle.jpg"
+            alt="Michelle Appleton's avatar"
+          />
+          <p class="content__name">Michelle Appleton</p>
+          <p class="content__date">28 Jun 2020</p>
+          <img
+            class="content__share"
+            src="./images/icon-share.svg"
+            alt="Share"
+          />
+        </div>
+      </section>
+    </main>
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
