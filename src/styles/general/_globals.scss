@@ -5,8 +5,10 @@ html {
 body {
   display: grid;
   place-content: center;
+  padding: 1rem;
   background-color: var(--lightGrayishBlue);
   font-family: var(--fontFamily);
+  font-size: 0.66rem;
+  font-weight: 500;
   color: var(--veryDarkGrayishBlue);
-  padding: 1rem;
 }
