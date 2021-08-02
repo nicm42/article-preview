@@ -3,7 +3,10 @@ html {
 }
 
 body {
+  display: grid;
+  place-content: center;
   background-color: var(--lightGrayishBlue);
   font-family: var(--fontFamily);
   color: var(--veryDarkGrayishBlue);
+  padding: 1rem;
 }

@@ -1,1 +1,21 @@
 @use '../general' as g;
+
+.content {
+  &__image {
+    & img {
+      border-start-start-radius: 1rem;
+      border-start-end-radius: 1rem;
+    }
+  }
+
+  &__text {
+    background-color: hsl(0, 0%, 100%);
+    border-end-start-radius: 1rem;
+    border-end-end-radius: 1rem;
+    padding: 2rem;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+  }
+}
