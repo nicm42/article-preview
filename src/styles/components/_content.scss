@@ -9,18 +9,19 @@
   }
 
   &__text {
+    padding: 2em;
     background-color: hsl(0, 0%, 100%);
     border-end-start-radius: 1rem;
     border-end-end-radius: 1rem;
-    padding: 2em;
   }
 
   &__header {
     margin-bottom: 1rem;
+    color: var(--veryDarkGrayishBlue);
   }
 
   &__paragraph {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   &__footer {
@@ -40,6 +41,8 @@
 
   &__name {
     grid-area: name;
+    font-weight: 700;
+    color: var(--veryDarkGrayishBlue);
   }
 
   &__date {
@@ -48,8 +51,11 @@
 
   &__share {
     grid-area: share;
-    padding: 1rem;
+    display: grid;
+    place-content: center;
     background: var(--lightGrayishBlue);
+    border: none;
     border-radius: 50%;
+    cursor: pointer;
   }
 }
