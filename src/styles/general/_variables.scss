@@ -2,12 +2,17 @@
   // Colours
   --veryDarkGrayishBlue: hsl(217, 19%, 35%);
   --desaturatedDarkBlue: hsl(214, 17%, 51%);
-  --grayishBlue: hsl(212, 23%, 69%);
+  --grayishBlue: hsl(213, 16%, 75%);
   --lightGrayishBlue: hsl(210, 46%, 95%);
 
   // Typography
   --fontFamily: 'Manrope', sans-serif;
 
-  // Borders:
-  --border: 1rem;
+  //Padding
+  --textPaddingSide: 2em;
+  --textPaddingTop: 3em;
+  --textPaddingBottom: 1em;
+
+  // Other things
+  --borderRadius: 1rem;
 }

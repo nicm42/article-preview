@@ -5,7 +5,7 @@
   margin-bottom: 1rem;
   // A border-radius here doesn't actually round the corners, it needs doing on the two children
   // But it does mean the box-shadow doesn't ignore the border-radius
-  border-radius: var(--border);
+  border-radius: var(--borderRadius);
   box-shadow: 10px 40px 30px 0px rgba(181, 190, 201, 0.25); // this colour is lightGrayishBlue
 
   @include g.breakpoint-up(large) {
@@ -14,28 +14,29 @@
 
   &__image {
     & img {
-      border-start-start-radius: var(--border);
-      border-start-end-radius: var(--border);
+      border-start-start-radius: var(--borderRadius);
+      border-start-end-radius: var(--borderRadius);
 
       @include g.breakpoint-up(large) {
         // To make sure image is always as tall as the text and not squished
         height: 100%;
         object-fit: cover;
         border-start-end-radius: 0;
-        border-end-start-radius: var(--border);
+        border-end-start-radius: var(--borderRadius);
       }
     }
   }
 
   &__text {
-    padding: 2em;
+    padding: var(--textPaddingTop) var(--textPaddingSide)
+      var(--textPaddingBottom) var(--textPaddingSide);
     background-color: hsl(0, 0%, 100%);
-    border-end-start-radius: var(--border);
-    border-end-end-radius: var(--border);
+    border-end-start-radius: var(--borderRadius);
+    border-end-end-radius: var(--borderRadius);
 
     @include g.breakpoint-up(large) {
       border-end-start-radius: 0;
-      border-start-end-radius: var(--border);
+      border-start-end-radius: var(--borderRadius);
     }
   }
 
@@ -49,12 +50,13 @@
   }
 
   &__footer {
+    position: relative;
     display: grid;
     grid-template-columns: 2rem 1fr 2rem;
     grid-template-rows: repeat (2, auto);
     grid-template-areas:
-      'avatar name share'
-      'avatar date share';
+      'avatar name arrow'
+      'avatar date arrow';
     column-gap: 1em;
   }
 
@@ -73,13 +75,55 @@
     grid-area: date;
   }
 
-  &__share {
-    grid-area: share;
+  &__arrow {
+    grid-area: arrow;
     display: grid;
     place-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
     background: var(--lightGrayishBlue);
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    z-index: 2;
+
+    &.show {
+      background: var(--desaturatedDarkBlue);
+    }
+  }
+
+  &__share {
+    position: absolute;
+    display: flex;
+    padding: 1.5em 2em;
+    // 'Hack' to get share to fill whole width, and go to the bottom ignoring padding on __text
+    width: calc(100% + var(--textPaddingSide) * 2);
+    inset-inline-start: calc(var(--textPaddingSide) * -1);
+    inset-block-end: calc(var(--textPaddingBottom) * -1);
+    background-color: var(--veryDarkGrayishBlue);
+    border-end-start-radius: var(--borderRadius);
+    border-end-end-radius: var(--borderRadius);
+    transform: translateY(200%);
+    opacity: 0;
+
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__sharetext {
+    font-size: 0.67rem;
+    color: var(--grayishBlue);
+    text-transform: uppercase;
+    letter-spacing: 0.33em;
+  }
+
+  &__shareimages {
+    display: flex;
+
+    & img {
+      margin: 0 0.75em;
+    }
   }
 }
