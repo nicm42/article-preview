@@ -3,10 +3,10 @@ $breakpoints-up: (
   'small': '23.5em',
   //448px
   'medium': '28em',
-  //640px
-  'medium-large': '40em',
+  //700px
+  'large': '35em',
   //944px
-  'large': '59em'
+  'very-large': '59em'
 );
 
 @mixin breakpoint-up($size) {
