@@ -6,7 +6,7 @@
   // A border-radius here doesn't actually round the corners, it needs doing on the two children
   // But it does mean the box-shadow doesn't ignore the border-radius
   border-radius: var(--borderRadius);
-  box-shadow: 0.5rem 2rem 1.5rem 0px rgba(181, 190, 201, 0.25); // this colour is lightGrayishBlue
+  box-shadow: 0.5rem 2rem 1.5rem 0 rgba(181, 190, 201, 0.25); // this colour is lightGrayishBlue
 
   @include g.breakpoint-up(large) {
     display: flex;
