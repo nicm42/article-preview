@@ -1,5 +1,3 @@
-import '../styles/main.scss';
+import { share } from './share';
 
-import helloworld from './helloworld';
-
-helloworld();
+share();
