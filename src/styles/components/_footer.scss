@@ -1,0 +1,46 @@
+@use '../general' as g;
+
+.content {
+  &__footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2rem 1fr 2rem;
+    grid-template-rows: repeat (2, auto);
+    grid-template-areas:
+      'avatar name arrow'
+      'avatar date arrow';
+    column-gap: 1em;
+  }
+
+  &__avatar {
+    grid-area: avatar;
+    border-radius: 50%;
+  }
+
+  &__name {
+    grid-area: name;
+    font-weight: 700;
+    color: var(--veryDarkGrayishBlue);
+  }
+
+  &__date {
+    grid-area: date;
+  }
+
+  &__arrow {
+    grid-area: arrow;
+    display: grid;
+    place-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--lightGrayishBlue);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+
+    &.show {
+      background: var(--desaturatedDarkBlue);
+    }
+  }
+}

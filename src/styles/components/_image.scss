@@ -1,0 +1,18 @@
+@use '../general' as g;
+
+.content {
+  &__image {
+    & img {
+      border-start-start-radius: var(--borderRadius);
+      border-start-end-radius: var(--borderRadius);
+
+      @include g.breakpoint-up(large) {
+        // To make sure image is always as tall as the text and not squished
+        height: 100%;
+        object-fit: cover;
+        border-start-end-radius: 0;
+        border-end-start-radius: var(--borderRadius);
+      }
+    }
+  }
+}

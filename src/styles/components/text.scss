@@ -1,0 +1,25 @@
+@use '../general' as g;
+
+.content {
+  &__text {
+    padding: var(--textPaddingTop) var(--textPaddingSide)
+      var(--textPaddingBottom) var(--textPaddingSide);
+    background-color: hsl(0, 0%, 100%);
+    border-end-start-radius: var(--borderRadius);
+    border-end-end-radius: var(--borderRadius);
+
+    @include g.breakpoint-up(large) {
+      border-end-start-radius: 0;
+      border-start-end-radius: var(--borderRadius);
+    }
+  }
+
+  &__header {
+    margin-bottom: 1rem;
+    color: var(--veryDarkGrayishBlue);
+  }
+
+  &__paragraph {
+    margin-bottom: 2rem;
+  }
+}
