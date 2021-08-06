@@ -66,8 +66,12 @@
       margin-inline-start: 1em;
     }
 
-    & img {
-      max-width: unset; // Stop them from being shrunk
+    & svg {
+      fill: #fff;
+    }
+
+    &:hover > svg {
+      fill: var(--grayishBlue);
     }
   }
 }
