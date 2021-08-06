@@ -34,6 +34,7 @@
     width: 1.5rem;
     height: 1.5rem;
     background: var(--lightGrayishBlue);
+    fill: var(--desaturatedDarkBlue);
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -42,13 +43,27 @@
     &.show {
       background: var(--desaturatedDarkBlue);
 
+      & > svg {
+        fill: var(--lightGrayishBlue);
+      }
+
       &:hover {
         background: var(--lightGrayishBlue);
+
+        & > svg {
+          fill: var(--desaturatedDarkBlue);
+        }
       }
     }
 
+    // Focus state confuses things here since it's focussed when you've just clicked it
+    // And the browser default one is nice and visible, so we'll leave it as it is
     &:hover {
       background: var(--desaturatedDarkBlue);
+
+      & > svg {
+        fill: var(--lightGrayishBlue);
+      }
     }
   }
 }
