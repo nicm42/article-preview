@@ -41,6 +41,14 @@
 
     &.show {
       background: var(--desaturatedDarkBlue);
+
+      &:hover {
+        background: var(--lightGrayishBlue);
+      }
+    }
+
+    &:hover {
+      background: var(--desaturatedDarkBlue);
     }
   }
 }

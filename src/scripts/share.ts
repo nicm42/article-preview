@@ -4,5 +4,6 @@ export const share = (): void => {
 
   button.addEventListener('click', () => {
     active.classList.toggle('show');
+    button.classList.toggle('show');
   });
 };
