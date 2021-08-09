@@ -1,0 +1,43 @@
+@use '../general' as g;
+
+.toggle {
+  display: flex;
+  justify-content: end;
+  gap: 1em;
+  border: none;
+
+  &__radio {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & label {
+    color: var(--veryDarkGrayishBlue);
+    cursor: pointer;
+  }
+
+  & input {
+    position: relative;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  & input::before {
+    position: absolute;
+    content: '';
+    inset: -1em 0;
+    width: 1em;
+    height: 1em;
+    border: 1px solid var(--desaturatedDarkBlue);
+    border-radius: 50%;
+  }
+
+  & input:checked::before {
+    background: radial-gradient(
+      var(--veryDarkGrayishBlue) 0%,
+      var(--veryDarkGrayishBlue) 40%,
+      transparent 50%,
+      transparent 100%
+    );
+  }
+}
