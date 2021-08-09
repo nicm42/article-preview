@@ -1,5 +1,10 @@
 @use '../general' as g;
 
+aside {
+  display: flex;
+  justify-content: end;
+}
+
 .toggle {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -7,6 +12,11 @@
   justify-self: end;
   gap: 1em;
   padding: 0;
+  // To stop fieldset being as wide as .content
+  // https://stackoverflow.com/a/53625429
+  min-width: 0;
+  max-width: 10%;
+  width: 100%;
   border: none;
 
   & legend {
