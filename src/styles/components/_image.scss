@@ -2,17 +2,24 @@
 
 .content {
   &__image {
-    & img {
-      border-start-start-radius: var(--borderRadius);
-      border-start-end-radius: var(--borderRadius);
+    min-height: 12.5rem;
+    background-image: url(../images/drawers.jpg);
+    background-size: cover;
+    background-position: center -1.125em;
+    background-repeat: no-repeat;
+    border-start-start-radius: var(--borderRadius);
+    border-start-end-radius: var(--borderRadius);
 
-      @include g.breakpoint-up(large) {
-        // To make sure image is always as tall as the text and not squished
-        height: 100%;
-        object-fit: cover;
-        border-start-end-radius: 0;
-        border-end-start-radius: var(--borderRadius);
-      }
+    @include g.breakpoint-up(large) {
+      // To make sure image is always as tall as the text and not squished
+      height: 100%;
+      border-start-end-radius: 0;
+      border-end-start-radius: var(--borderRadius);
     }
+  }
+
+  & img {
+    /* height: 12.5rem;
+      object-fit: cover; */
   }
 }
