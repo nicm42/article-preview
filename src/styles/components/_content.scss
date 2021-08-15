@@ -1,7 +1,7 @@
 @use '../general' as g;
 
 .content {
-  max-width: 60em;
+  max-width: 55em;
   margin-bottom: 1rem;
   // A border-radius here doesn't actually round the corners, it needs doing on the two children
   // But it does mean the box-shadow doesn't ignore the border-radius
