@@ -14,12 +14,18 @@
     border-end-start-radius: var(--borderRadius);
     border-end-end-radius: var(--borderRadius);
     // Moving it off-screen so it's not on top of anything but not visible
-    transform: translateX(-1000%);
+    transform: translateY(-1000%);
     opacity: 0;
     transition: opacity var(--transitionTime) ease-in-out,
       height 0ms linear var(--transitionTime),
       transform 0ms linear var(--transitionTime),
       max-height 0ms linear var(--transitionTime);
+
+    &.show {
+      transform: translateX(0);
+      opacity: 1;
+      transition-delay: var(--transitionTime);
+    }
 
     @include g.breakpoint-up(large) {
       width: 70%;
@@ -40,12 +46,6 @@
         border-right: 0.75rem solid transparent;
         border-top: 0.75rem solid var(--veryDarkGrayishBlue);
       }
-    }
-
-    &.show {
-      transform: translateX(0);
-      opacity: 1;
-      transition-delay: var(--transitionTime);
     }
   }
 
