@@ -2,25 +2,19 @@
 
 aside {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .toggle {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 1em;
-  padding: 0;
-  // To stop fieldset being as wide as .content
-  // https://stackoverflow.com/a/53625429
-  min-width: 0;
-  max-width: 10%;
-  width: 100%;
   border: none;
 
   & legend {
-    grid-column: span 2;
     padding-bottom: 1em;
+  }
+
+  &__radios {
+    display: flex;
+    gap: 1em;
   }
 
   &__radio {
