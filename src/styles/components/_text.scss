@@ -15,11 +15,15 @@
   }
 
   &__header {
-    margin-bottom: 1rem;
+    margin-block-end: 1rem;
     color: var(--veryDarkGrayishBlue);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.0125em;
   }
 
   &__paragraph {
-    margin-bottom: 2rem;
+    margin-block-end: 2rem;
+    font-weight: 200;
   }
 }
