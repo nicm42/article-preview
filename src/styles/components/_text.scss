@@ -9,6 +9,7 @@
     border-end-end-radius: var(--borderRadius);
 
     @include g.breakpoint-up(large) {
+      padding: 2rem 2.5rem;
       border-end-start-radius: 0;
       border-start-end-radius: var(--borderRadius);
     }
@@ -20,10 +21,19 @@
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.0125em;
+
+    @include g.breakpoint-up(large) {
+      font-size: 1.25rem;
+    }
   }
 
   &__paragraph {
     margin-block-end: 3.25rem;
     font-weight: 200;
+
+    @include g.breakpoint-up(large) {
+      margin-block-end: 1.25rem;
+      font-weight: 500;
+    }
   }
 }
