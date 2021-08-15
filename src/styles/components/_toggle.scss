@@ -8,13 +8,9 @@ aside {
 .toggle {
   border: none;
 
-  & legend {
-    padding-bottom: 1em;
-  }
-
   &__radios {
     display: flex;
-    gap: 1em;
+    gap: 1.5em;
   }
 
   &__radio {
@@ -28,27 +24,6 @@ aside {
   }
 
   & input {
-    position: relative;
-    appearance: none;
     cursor: pointer;
-  }
-
-  & input::before {
-    position: absolute;
-    content: '';
-    inset: -1em 0;
-    width: 1em;
-    height: 1em;
-    border: 1px solid var(--desaturatedDarkBlue);
-    border-radius: 50%;
-  }
-
-  & input:checked::before {
-    background: radial-gradient(
-      var(--veryDarkGrayishBlue) 0%,
-      var(--veryDarkGrayishBlue) 40%,
-      transparent 50%,
-      transparent 100%
-    );
   }
 }
