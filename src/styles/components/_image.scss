@@ -11,8 +11,9 @@
     border-start-end-radius: var(--borderRadius);
 
     @include g.breakpoint-up(large) {
-      // To make sure image is always as tall as the text and not squished
-      height: 100%;
+      min-height: 0;
+      min-width: 17.8125rem;
+      background-position: left center;
       border-start-end-radius: 0;
       border-end-start-radius: var(--borderRadius);
     }
