@@ -1,0 +1,14 @@
+@use '../general' as g;
+
+.content {
+  max-width: 55em;
+  margin-bottom: 1rem;
+  // A border-radius here doesn't actually round the corners, it needs doing on the two children
+  // But it does mean the box-shadow doesn't ignore the border-radius
+  border-radius: var(--borderRadius);
+  box-shadow: 0 0.25em 0.25em 0 rgba(0, 0, 0, 0.25);
+
+  @include g.breakpoint-up(large) {
+    display: flex;
+  }
+}

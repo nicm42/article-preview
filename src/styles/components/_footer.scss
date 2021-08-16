@@ -1,0 +1,70 @@
+@use '../general' as g;
+
+.content {
+  &__footer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2.5rem 1fr 2rem;
+    grid-template-areas:
+      'avatar name arrow'
+      'avatar date arrow';
+    align-items: center;
+    column-gap: 1em;
+  }
+
+  &__avatar {
+    grid-area: avatar;
+    border-radius: 50%;
+  }
+
+  &__name {
+    grid-area: name;
+    font-weight: 700;
+    color: var(--veryDarkGrayishBlue);
+  }
+
+  &__date {
+    grid-area: date;
+    font-weight: 200;
+  }
+
+  &__arrow {
+    grid-area: arrow;
+    display: grid;
+    place-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: var(--lightGrayishBlue);
+    fill: var(--desaturatedDarkBlue);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+
+    &.show {
+      background: var(--desaturatedDarkBlue);
+
+      & > svg {
+        fill: var(--lightGrayishBlue);
+      }
+
+      &:hover {
+        background: var(--lightGrayishBlue);
+
+        & > svg {
+          fill: var(--desaturatedDarkBlue);
+        }
+      }
+    }
+
+    // Focus state confuses things here since it's focussed when you've just clicked it
+    // And the browser default one is nice and visible, so we'll leave it as it is
+    &:hover {
+      background: var(--desaturatedDarkBlue);
+
+      & > svg {
+        fill: var(--lightGrayishBlue);
+      }
+    }
+  }
+}

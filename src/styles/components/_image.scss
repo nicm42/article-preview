@@ -1,0 +1,26 @@
+@use '../general' as g;
+
+.content {
+  &__image {
+    min-height: 12.5rem;
+    background-image: url(../images/drawers.jpg);
+    background-size: cover;
+    background-position: center -1.125em;
+    background-repeat: no-repeat;
+    border-start-start-radius: var(--borderRadius);
+    border-start-end-radius: var(--borderRadius);
+
+    @include g.breakpoint-up(medium) {
+      // So we get in the most important parts of the image
+      background-position: center -8.125em;
+    }
+
+    @include g.breakpoint-up(large) {
+      min-height: 0;
+      min-width: 17.8125rem;
+      background-position: left center;
+      border-start-end-radius: 0;
+      border-end-start-radius: var(--borderRadius);
+    }
+  }
+}

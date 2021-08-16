@@ -1,7 +1,9 @@
-body {
-  background: aliceblue;
+@use 'general/reset';
+@use 'general/globals';
 
-  a {
-    color: green;
-  }
-}
+@use 'components/content';
+@use 'components/image';
+@use 'components/text';
+@use 'components/footer';
+@use 'components/share';
+@use 'components/toggle';

@@ -1,0 +1,19 @@
+:root {
+  // Colours
+  --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --desaturatedDarkBlue: hsl(214, 17%, 51%);
+  --grayishBlue: hsl(213, 16%, 75%);
+  --lightGrayishBlue: hsl(210, 46%, 95%);
+
+  // Typography
+  --fontFamily: 'Manrope', sans-serif;
+
+  //Padding
+  --textPaddingSide: 2em;
+  --textPaddingTop: 2.25em;
+  --textPaddingBottom: 1.25em;
+
+  // Other things
+  --borderRadius: 0.625rem;
+  --transitionTime: 250ms;
+}

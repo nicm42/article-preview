@@ -1,0 +1,29 @@
+@use '../general' as g;
+
+aside {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toggle {
+  border: none;
+
+  &__radios {
+    display: flex;
+    gap: 1.5em;
+  }
+
+  &__radio {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & label {
+    color: var(--veryDarkGrayishBlue);
+    cursor: pointer;
+  }
+
+  & input {
+    cursor: pointer;
+  }
+}

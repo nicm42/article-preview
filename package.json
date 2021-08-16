@@ -5,7 +5,9 @@
   "main": "src/js/main.js",
   "scripts": {
     "build": "rollup -c",
-    "serve": "./node_modules/.bin/reload -b -d ./ -p 8000 | ./node_modules/.bin/rollup -c -w"
+    "serve": "./node_modules/.bin/reload -b -d ./ -p 8000 | ./node_modules/.bin/rollup -c -w",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
     "@babel/preset-env": "^7.14.9",
     "@rollup/plugin-typescript": "^8.2.5",
     "autoprefixer": "^10.3.1",
+    "cypress": "^8.2.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",

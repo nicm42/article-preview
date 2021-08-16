@@ -1,0 +1,19 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  padding: 1.5rem;
+  background-color: var(--lightGrayishBlue);
+  font-family: var(--fontFamily);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--desaturatedDarkBlue);
+}
+
+p {
+  max-width: 60ch;
+}

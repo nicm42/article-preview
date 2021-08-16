@@ -1,5 +1,6 @@
 import '../styles/main.scss';
+import { share } from './share';
+import { direction } from './direction';
 
-import helloworld from './helloworld';
-
-helloworld();
+share();
+direction();
